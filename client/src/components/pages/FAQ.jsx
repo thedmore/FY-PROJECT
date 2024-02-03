@@ -2,15 +2,16 @@ import { styled } from "@mui/material";
 
 const MainDiv = styled("div")({
   height: "100vh",
+  fontSize: "25px",
   textAlign: "center",
 });
 
-const Body = () => {
+const FAQ = () => {
   return (
     <div>
-      <MainDiv>BODY</MainDiv>
+      <MainDiv>FAQ page</MainDiv>
     </div>
   );
 };
 
-export default Body;
+export default FAQ;

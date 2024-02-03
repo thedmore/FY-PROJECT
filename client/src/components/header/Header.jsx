@@ -1,7 +1,13 @@
-import { AppBar, Toolbar, Typography, styled } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Button,
+  Toolbar,
+  Typography,
+  styled,
+} from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
-import { Link } from "react-router-dom";
-import Translate from "../Translate";
+import { NavLink } from "react-router-dom";
 
 const Component = styled(AppBar)`
   position: static;
@@ -18,10 +24,11 @@ const Component2 = styled(AppBar)`
 
 const Container = styled(Toolbar)`
   & > a {
-    padding: 25px;
+    padding: 0 40px;
     color: white;
     font-size: 18px;
     text-decoration: none;
+    text-transform: none;
   }
 `;
 
@@ -58,6 +65,7 @@ const Header = () => {
             <Typography style={{ color: "red" }}>
               Emergency Number: 112
             </Typography>
+            <Box>Kannada</Box>
           </Container>
 
           <Container maxWidth="sm">{/* <Translate /> */}</Container>
@@ -83,13 +91,30 @@ const Header = () => {
 
       <Component>
         <Container>
-          <Link to="/">
+          <Button component={NavLink} to="/">
             <HomeIcon />
-          </Link>
-          <Link to="/aboutus">About Us</Link>
-          <Link to="/faq">FAQ</Link>
-          <Link to="/contactus">Contact Us</Link>
-          <Link to="/login">Login</Link>
+          </Button>
+          <Button component={NavLink} to="/about-us">
+            About Us
+          </Button>
+          <Button component={NavLink} to="/faq">
+            FAQ
+          </Button>
+          <Button component={NavLink} to="/contact-us">
+            Contact Us
+          </Button>
+          <Button component={NavLink} to="/govt-organization">
+            Government Organization
+          </Button>
+          <Button component={NavLink} to="/signup">
+            Create Account
+          </Button>
+          <Button component={NavLink} to="/login">
+            File Complaint
+          </Button>
+          <Button component={NavLink} to="/login">
+            Login/Register
+          </Button>
         </Container>
       </Component>
     </>

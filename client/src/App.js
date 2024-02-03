@@ -1,13 +1,25 @@
-import Header from "./components/header/Header.jsx";
-import Footer from "./components/footer/Footer.jsx";
-import Body from "./components/MainBody/Body.jsx";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import Home from "./components/pages/Home";
+import About from "./components/pages/About";
+import FAQ from "./components/pages/FAQ";
+import Contact from "./components/pages/Contact";
+import GovtOrg from "./components/pages/GovtOrg";
+import Login from "./components/auth.jwt/Login";
 
 function App() {
   return (
     <>
-      <Header />
-      <Body />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about-us" element={<About />} />
+          <Route path="faq" element={<FAQ />} />
+          <Route path="contact-us" element={<Contact />} />
+          <Route path="govt-organization" element={<GovtOrg />} />
+        </Route>
+        <Route path="login" element={<Login />} />
+      </Routes>
     </>
   );
 }
